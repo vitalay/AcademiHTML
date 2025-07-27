@@ -86,3 +86,60 @@ const factoriala = (n) => {
   return iter(n, 1);
 };
 console.log(factoriala(3));
+//___________________________________
+const sumOfSequencesw = (begin, end) => {
+  const iter = (counter, acc) => {
+    if (counter === end) {
+      return acc + counter;
+    }
+    return iter(counter + 1, acc += counter);
+  };
+
+  return iter(begin, 0);
+};
+
+console.log(sumOfSequencesw(1, 5));
+console.log(sumOfSequencesw(4, 10));
+console.log(sumOfSequencesw(-3, 2));
+
+
+function smallestDivisor(num) {
+  if (num === 1) {
+    return 1;
+  }
+
+  let divisor = 2;
+
+  while (divisor <= num) {
+    if (num % divisor === 0) {
+      return divisor;
+    }
+    divisor += 1;
+  }
+}
+console.log(smallestDivisor(10)); // 2
+console.log(smallestDivisor(15)); // 3
+console.log(smallestDivisor(17)); // 17
+
+
+function smallestDivisor(num) {
+  if (num < 1) {
+    return NaN;
+  }
+
+  if (num === 1) {
+    return 1;
+  }
+
+  let divisor = 2;
+
+  while (divisor <= num) {
+    if (num % divisor === 0) {
+      return divisor;
+    }
+    divisor += 1;
+  }
+}
+console.log(smallestDivisor(10)); // 2
+console.log(smallestDivisor(15)); // 3
+console.log(smallestDivisor(17)); // 17
